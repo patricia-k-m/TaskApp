@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- Flatpickr - for the execution date input-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js" defer></script>
+    <title>Task List</title>
+  </head>
+  <body>
+    <!-- The main container will hold both left content and the new detail panel -->
+    <div class="main-container">
+      <!-- Left section: task input on top and task list on bottom -->
+      <div class="left-section">
+        <!-- Task input form-->
+        <div class="task-app">
+          <h3>Task Input <img src="./draw_10906716.png" alt="list" /></h3>
+          <form>
+            <label for="title-input" class="visually-hidden"></label><br />
+            <div class="input-wrapper">
+              <input
+                id="title-input"
+                name="title-input"
+                placeholder="Enter task title"
+                maxlength="40"
+                required
+              />
+              <span id="title-count" class="char-count hidden">0 / 40</span>
+            </div>
+            <br />
+            <label for="desc-input" class="visually-hidden"></label><br />
+            <textarea
+              id="desc-input"
+              name="desc-input"
+              placeholder="Enter task description"
+              required
+            ></textarea
+            ><br />
+            <label for="execution-date" class="visually-hidden"></label>
+            <input
+              type="text"
+              id="execution-date"
+              name="execution-date"
+              placeholder="Enter task execution date"
+              required
+            />
+            <button class="submit-btn">Submit</button>
+          </form>
+        </div>
+
+        <!-- Task list container -->
+        <div class="task-display">
+          <h3>Task list <img src="./clipboard_839860.png" alt="list" /></h3>
+          <p id="empty-message" class="empty-message">Your task list is empty</p>
+          <div class="task-list-wrapper">
+            <ul id="task-list" class="task-list"></ul>
+            <button id="delete-all-btn" class="delete-all-btn">Delete All Tasks</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Detail panel: section on the right,initially hidden; appears when a task is clicked -->
+      <div class="detail-panel hidden">
+        <button class="close-detail-panel">✖</button>
+        <h3>Task Details</h3>
+        <div class="detail-content">
+          <p class="detail-title">Task Title Here</p>
+          <p class="detail-description">Task Full Description Here</p>
+          <p class="detail-execution-date"></p>
+        </div>
+
+        <div class="detail-actions">
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn">Delete</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
